@@ -119,3 +119,80 @@ bool multiplyMatrices(int matA[MAX][MAX], int matB[MAX][MAX], int rowsA, int col
     }
     return true;
 }
+
+
+int main() {
+    int choice;
+
+    cout << "Matrix Operations Menu" << endl;
+    cout << "1. Transpose a Matrix" << endl;
+    cout << "2. Add Two Matrices" << endl;
+    cout << "3. Multiply Two Matrices" << endl;
+    cout << "Enter choice: ";
+    cin >> choice;
+
+    if (choice == 1) {
+        int rows, cols;
+        int mat[MAX][MAX], result[MAX][MAX];
+
+        cout << "Enter number of rows: ";
+        cin >> rows;
+        cout << "Enter number of columns: ";
+        cin >> cols;
+
+        readMatrix(mat, rows, cols, "A");
+        transposeMatrix(mat, rows, cols, result);
+
+        printMatrix(mat, rows, cols, "Original Matrix");
+        printMatrix(result, cols, rows, "Transposed Matrix");
+
+    } else if (choice == 2) {
+        int rows, cols;
+        int matA[MAX][MAX], matB[MAX][MAX], result[MAX][MAX];
+
+        cout << "Enter number of rows: ";
+        cin >> rows;
+        cout << "Enter number of columns: ";
+        cin >> cols;
+
+        readMatrix(matA, rows, cols, "A");
+        readMatrix(matB, rows, cols, "B");
+        addMatrices(matA, matB, rows, cols, result);
+
+        printMatrix(matA, rows, cols, "Matrix A");
+        printMatrix(matB, rows, cols, "Matrix B");
+        printMatrix(result, rows, cols, "Sum (A + B)");
+
+    } else if (choice == 3) {
+        int rowsA, colsA, rowsB, colsB;
+        int matA[MAX][MAX], matB[MAX][MAX], result[MAX][MAX];
+
+        cout << "Matrix A dimensions:" << endl;
+        cout << "Enter number of rows: ";
+        cin >> rowsA;
+        cout << "Enter number of columns: ";
+        cin >> colsA;
+
+        cout << "Matrix B dimensions:" << endl;
+        cout << "Enter number of rows: ";
+        cin >> rowsB;
+        cout << "Enter number of columns: ";
+        cin >> colsB;
+
+        readMatrix(matA, rowsA, colsA, "A");
+        readMatrix(matB, rowsB, colsB, "B");
+
+        if (multiplyMatrices(matA, matB, rowsA, colsA, rowsB, colsB, result)) {
+            printMatrix(matA, rowsA, colsA, "Matrix A");
+            printMatrix(matB, rowsB, colsB, "Matrix B");
+            printMatrix(result, rowsA, colsB, "Product (A x B)");
+        } else {
+            cout << "\nError: Number of columns in A must equal number of rows in B." << endl;
+        }
+
+    } else {
+        cout << "Invalid choice." << endl;
+    }
+
+    return 0;
+}
