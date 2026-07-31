@@ -49,3 +49,7 @@ int computeSum(int arr[], int n) {
     }
     return sum;
 }
+
+double computeAverage(int arr[], int n) {
+    return static_cast<double>(computeSum(arr, n)) / n;
+}
