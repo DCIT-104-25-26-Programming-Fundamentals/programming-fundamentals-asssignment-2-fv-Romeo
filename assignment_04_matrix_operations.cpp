@@ -76,3 +76,21 @@ void readMatrix(int mat[MAX][MAX], int rows, int cols, string label) {
         }
     }
 }
+
+void printMatrix(int mat[MAX][MAX], int rows, int cols, string label) {
+    cout << "\n" << label << ":" << endl;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << setw(5) << mat[i][j];
+        }
+        cout << endl;
+    }
+}
+
+void transposeMatrix(int mat[MAX][MAX], int rows, int cols, int result[MAX][MAX]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[j][i] = mat[i][j];
+        }
+    }
+}
