@@ -94,3 +94,28 @@ void transposeMatrix(int mat[MAX][MAX], int rows, int cols, int result[MAX][MAX]
         }
     }
 }
+
+void addMatrices(int matA[MAX][MAX], int matB[MAX][MAX], int rows, int cols, int result[MAX][MAX]) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            result[i][j] = matA[i][j] + matB[i][j];
+        }
+    }
+}
+
+bool multiplyMatrices(int matA[MAX][MAX], int matB[MAX][MAX], int rowsA, int colsA, int rowsB, int colsB, int result[MAX][MAX]) {
+    if (colsA != rowsB) {
+        return false;  // incompatible dimensions
+    }
+
+    for (int i = 0; i < rowsA; i++) {
+        for (int j = 0; j < colsB; j++) {
+            int sum = 0;
+            for (int k = 0; k < colsA; k++) {
+                sum += matA[i][k] * matB[k][j];
+            }
+            result[i][j] = sum;
+        }
+    }
+    return true;
+}
