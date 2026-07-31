@@ -75,7 +75,7 @@ int findMin(int arr[], int n) {
 }
 
 
-
+// Main function
 int main() {
     int n;
 
