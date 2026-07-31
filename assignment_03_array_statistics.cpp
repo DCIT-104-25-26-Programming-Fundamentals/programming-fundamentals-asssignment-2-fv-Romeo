@@ -73,3 +73,36 @@ int findMin(int arr[], int n) {
     }
     return minVal;
 }
+
+
+
+int main() {
+    int n;
+
+    cout << "How many numbers? ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Error: Please enter a positive number of values." << endl;
+        return 0;
+    }
+
+    int numbers[n];
+    for (int i = 0; i < n; i++) {
+        cout << "Enter number " << (i + 1) << ": ";
+        cin >> numbers[i];
+    }
+
+    int sum = computeSum(numbers, n);
+    double average = computeAverage(numbers, n);
+    int maximum = findMax(numbers, n);
+    int minimum = findMin(numbers, n);
+
+    cout << "\nResults:" << endl;
+    cout << "Sum:     " << sum << endl;
+    cout << "Average: " << average << endl;
+    cout << "Maximum: " << maximum << endl;
+    cout << "Minimum: " << minimum << endl;
+
+    return 0;
+}
