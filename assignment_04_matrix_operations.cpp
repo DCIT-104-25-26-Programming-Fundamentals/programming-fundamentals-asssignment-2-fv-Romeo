@@ -65,3 +65,14 @@
 #include <string>
 using namespace std;
 
+const int MAX = 10;
+
+void readMatrix(int mat[MAX][MAX], int rows, int cols, string label) {
+    cout << "\nEntering values for Matrix " << label << ":" << endl;
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << "Enter element [" << i << "][" << j << "]: ";
+            cin >> mat[i][j];
+        }
+    }
+}
