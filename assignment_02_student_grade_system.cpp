@@ -64,6 +64,8 @@ char getGrade(int score) {
     }
 }
 
+
+// Main block
 int main() {
     int score;
 
