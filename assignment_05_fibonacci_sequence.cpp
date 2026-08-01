@@ -83,6 +83,7 @@ bool isFibonacci(int num) {
     return false;
 }
 
+// Main function
 int main() {
     int n;
 
