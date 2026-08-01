@@ -83,3 +83,20 @@
 #include <iomanip>
 using namespace std;
 
+struct Student {
+    string name;
+    int id;
+    vector<double> scores;
+};
+
+double computeAverage(const vector<double>& scores) {
+    if (scores.empty()) {
+        return 0.0;
+    }
+
+    double sum = 0.0;
+    for (int i = 0; i < scores.size(); i++) {
+        sum += scores[i];
+    }
+    return sum / scores.size();
+}
