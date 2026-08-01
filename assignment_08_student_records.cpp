@@ -177,3 +177,29 @@ void printMenu() {
     cout << "4. Quit" << endl;
     cout << "Enter your choice (1-4): ";
 }
+
+int main() {
+    vector<Student> students;
+    int choice;
+    bool running = true;
+
+    while (running) {
+        printMenu();
+        cin >> choice;
+
+        if (choice == 1) {
+            addStudent(students);
+        } else if (choice == 2) {
+            displayAllStudents(students);
+        } else if (choice == 3) {
+            calculateAverageForStudent(students);
+        } else if (choice == 4) {
+            cout << "Goodbye!" << endl;
+            running = false;
+        } else {
+            cout << "Error: Please enter a number between 1 and 4." << endl;
+        }
+    }
+
+    return 0;
+}
