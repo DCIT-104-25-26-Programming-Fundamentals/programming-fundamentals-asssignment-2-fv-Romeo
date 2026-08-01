@@ -93,7 +93,7 @@ bool divide(double a, double b, double& result) {
     return true;
 }
 
-bool modulus(double a, double b, double& result) {
+bool modulusop(double a, double b, double& result) {
     if (b == 0) {
         return false;  // same problem as division by zero
     }
@@ -124,4 +124,68 @@ void printMenu() {
     cout << "6. Exponentiation" << endl;
     cout << "7. Quit" << endl;
     cout << "Select an operation (1-7): ";
+}
+
+int main() {
+    int choice;
+    bool running = true;
+
+    while (running) {
+        printMenu();
+        cin >> choice;
+
+        if (choice == 1) {
+            double a, b;
+            getTwoNumbers(a, b);
+            cout << fixed << setprecision(2);
+            cout << "Result: " << a << " + " << b << " = " << add(a, b) << endl;
+
+        } else if (choice == 2) {
+            double a, b;
+            getTwoNumbers(a, b);
+            cout << fixed << setprecision(2);
+            cout << "Result: " << a << " - " << b << " = " << subtract(a, b) << endl;
+
+        } else if (choice == 3) {
+            double a, b;
+            getTwoNumbers(a, b);
+            cout << fixed << setprecision(2);
+            cout << "Result: " << a << " * " << b << " = " << multiply(a, b) << endl;
+
+        } else if (choice == 4) {
+            double a, b, result;
+            getTwoNumbers(a, b);
+            if (divide(a, b, result)) {
+                cout << fixed << setprecision(2);
+                cout << "Result: " << a << " / " << b << " = " << result << endl;
+            } else {
+                cout << "Error: Cannot divide by zero." << endl;
+            }
+
+        } else if (choice == 5) {
+            double a, b, result;
+            getTwoNumbers(a, b);
+            if (modulusop(a, b, result)) {
+                cout << fixed << setprecision(2);
+                cout << "Result: " << a << " % " << b << " = " << result << endl;
+            } else {
+                cout << "Error: Cannot divide by zero." << endl;
+            }
+
+        } else if (choice == 6) {
+            double a, b;
+            getTwoNumbers(a, b);
+            cout << fixed << setprecision(2);
+            cout << "Result: " << a << " ^ " << b << " = " << exponent(a, b) << endl;
+
+        } else if (choice == 7) {
+            cout << "Goodbye!" << endl;
+            running = false;
+
+        } else {
+            cout << "Error: Please enter a number between 1 and 7." << endl;
+        }
+    }
+
+    return 0;
 }
