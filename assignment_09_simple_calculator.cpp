@@ -104,3 +104,24 @@ bool modulus(double a, double b, double& result) {
 double exponent(double base, double exp) {
     return pow(base, exp);
 }
+
+void getTwoNumbers(double& a, double& b) {
+    cout << "Enter first number : ";
+    cin >> a;
+    cout << "Enter second number: ";
+    cin >> b;
+}
+
+void printMenu() {
+    cout << "\n============================" << endl;
+    cout << "     SIMPLE CALCULATOR" << endl;
+    cout << "============================" << endl;
+    cout << "1. Addition" << endl;
+    cout << "2. Subtraction" << endl;
+    cout << "3. Multiplication" << endl;
+    cout << "4. Division" << endl;
+    cout << "5. Modulus" << endl;
+    cout << "6. Exponentiation" << endl;
+    cout << "7. Quit" << endl;
+    cout << "Select an operation (1-7): ";
+}
