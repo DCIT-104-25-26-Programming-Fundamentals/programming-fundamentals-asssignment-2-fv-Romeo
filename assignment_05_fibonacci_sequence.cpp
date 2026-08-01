@@ -82,3 +82,28 @@ bool isFibonacci(int num) {
     }
     return false;
 }
+
+int main() {
+    int n;
+
+    cout << "How many terms? ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Error: Number of terms must be positive." << endl;
+    } else {
+        printFibonacci(n);
+    }
+
+    int num;
+    cout << "\nEnter a number to check: ";
+    cin >> num;
+
+    if (isFibonacci(num)) {
+        cout << num << " is a Fibonacci number." << endl;
+    } else {
+        cout << num << " is NOT a Fibonacci number." << endl;
+    }
+
+    return 0;
+}
