@@ -64,3 +64,12 @@ void printTable(int num) {
         cout << num << "  x  " << setw(2) << i << "  =  " << (num * i) << endl;
     }
 }
+
+void printAllTables(int n) {
+    for (int num = 1; num <= n; num++) {
+        printTable(num);
+        if (num < n) {
+            cout << "---------------------------" << endl;
+        }
+    }
+}
