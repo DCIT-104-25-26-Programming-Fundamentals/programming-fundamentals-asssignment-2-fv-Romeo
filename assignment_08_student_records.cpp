@@ -100,3 +100,51 @@ double computeAverage(const vector<double>& scores) {
     }
     return sum / scores.size();
 }
+
+void addStudent(vector<Student>& students) {
+    Student s;
+
+    cin.ignore(); // clear leftover newline from the previous cin >> choice
+    cout << "Student name: ";
+    getline(cin, s.name);
+
+    cout << "Student ID: ";
+    cin >> s.id;
+
+    int numScores;
+    cout << "How many scores? ";
+    cin >> numScores;
+
+    for (int i = 0; i < numScores; i++) {
+        double score;
+        cout << "Enter score " << (i + 1) << ": ";
+        cin >> score;
+        s.scores.push_back(score);
+    }
+
+    students.push_back(s);
+    cout << "Student \"" << s.name << "\" added successfully." << endl;
+}
+
+void displayAllStudents(const vector<Student>& students) {
+    if (students.empty()) {
+        cout << "No students have been added yet." << endl;
+        return;
+    }
+
+    cout << fixed << setprecision(2);
+
+    for (int i = 0; i < students.size(); i++) {
+        const Student& s = students[i];
+        cout << "\nName:    " << s.name << endl;
+        cout << "ID:      " << s.id << endl;
+        cout << "Scores:  ";
+        for (int j = 0; j < s.scores.size(); j++) {
+            cout << s.scores[j];
+            if (j < s.scores.size() - 1) {
+                cout << ", ";
+            }
+        }
+        cout << endl;
+        cout << "Average: " << computeAverage(s.scores) << endl;
+    }
