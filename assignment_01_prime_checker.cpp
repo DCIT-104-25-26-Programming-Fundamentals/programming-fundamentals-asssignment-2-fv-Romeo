@@ -49,6 +49,8 @@ bool isPrime(int n) {
     return true;
 }
 
+
+//Main block
 int main() {
     int number;
     cout << "Enter a number: ";
