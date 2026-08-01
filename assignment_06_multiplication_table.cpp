@@ -55,5 +55,12 @@
 // =============================================================================
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
+void printTable(int num) {
+    cout << "Multiplication Table for " << num << ":" << endl;
+    for (int i = 1; i <= 12; i++) {
+        cout << num << "  x  " << setw(2) << i << "  =  " << (num * i) << endl;
+    }
+}
