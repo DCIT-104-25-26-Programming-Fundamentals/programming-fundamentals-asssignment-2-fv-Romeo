@@ -80,3 +80,23 @@
 #include <string>
 using namespace std;
 
+void addTask(vector<string>& tasks) {
+    cin.ignore(); // clear leftover newline from the previous cin >> choice
+    string task;
+    cout << "Enter task: ";
+    getline(cin, task);
+    tasks.push_back(task);
+    cout << "Task added: \"" << task << "\"" << endl;
+}
+
+void viewTasks(const vector<string>& tasks) {
+    if (tasks.empty()) {
+        cout << "Your to-do list is empty. Add a task to get started!" << endl;
+        return;
+    }
+
+    cout << "Your Tasks:" << endl;
+    for (int i = 0; i < tasks.size(); i++) {
+        cout << (i + 1) << ". " << tasks[i] << endl;
+    }
+}
