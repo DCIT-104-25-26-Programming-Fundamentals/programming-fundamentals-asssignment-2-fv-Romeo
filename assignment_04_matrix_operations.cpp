@@ -121,6 +121,7 @@ bool multiplyMatrices(int matA[MAX][MAX], int matB[MAX][MAX], int rowsA, int col
 }
 
 
+// Main block
 int main() {
     int choice;
 
