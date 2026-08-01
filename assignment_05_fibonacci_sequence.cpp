@@ -65,3 +65,20 @@ void printFibonacci(int n) {
     }
     cout << endl;
 }
+
+bool isFibonacci(int num) {
+    if (num < 0) {
+        return false;  // negative numbers are never Fibonacci numbers
+    }
+
+    int a = 0, b = 1;
+    while (a <= num) {
+        if (a == num) {
+            return true;
+        }
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+    return false;
+}
