@@ -73,3 +73,34 @@
 #include <cmath>
 using namespace std;
 
+double add(double a, double b) {
+    return a + b;
+}
+
+double subtract(double a, double b) {
+    return a - b;
+}
+
+double multiply(double a, double b) {
+    return a * b;
+}
+
+bool divide(double a, double b, double& result) {
+    if (b == 0) {
+        return false;  // division by zero — let the caller handle the message
+    }
+    result = a / b;
+    return true;
+}
+
+bool modulus(double a, double b, double& result) {
+    if (b == 0) {
+        return false;  // same problem as division by zero
+    }
+    result = fmod(a, b);  // fmod() handles remainder for double values
+    return true;
+}
+
+double exponent(double base, double exp) {
+    return pow(base, exp);
+}
