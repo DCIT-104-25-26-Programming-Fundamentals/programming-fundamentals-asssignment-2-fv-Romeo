@@ -73,3 +73,35 @@ void printAllTables(int n) {
         }
     }
 }
+
+int main() {
+    int choice;
+
+    cout << "1. Single Table" << endl;
+    cout << "2. Tables from 1 to N" << endl;
+    cout << "Enter choice: ";
+    cin >> choice;
+
+    if (choice == 1) {
+        int num;
+        cout << "Enter a number: ";
+        cin >> num;
+        printTable(num);
+
+    } else if (choice == 2) {
+        int n;
+        cout << "Enter N: ";
+        cin >> n;
+
+        if (n <= 0) {
+            cout << "Error: N must be a positive integer." << endl;
+        } else {
+            printAllTables(n);
+        }
+
+    } else {
+        cout << "Invalid choice." << endl;
+    }
+
+    return 0;
+}
